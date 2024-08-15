@@ -9,11 +9,6 @@ export async function listAll() {
     return categories;
   }
   
-  export async function listAllAdmin() {
-    const categories = await Category.findAll();
-    return categories;
-  }
-  
   export async function listOne(id) {
     const category = await Category.findByPk(id);
     if (!category) throw new Error('Category not found');
@@ -33,13 +28,6 @@ export async function listAll() {
     
     await category.update(data);
     return category;
-  }
-  
-  export async function disable(id) {
-    const category = await Category.findByPk(id);
-    if (!category) throw new Error('Category not found');
-  
-    await category.update({ status: 2 });
   }
   
   export async function destroy(id) {

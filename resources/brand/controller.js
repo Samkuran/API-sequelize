@@ -5,11 +5,6 @@ export async function listAll() {
   return brands;
 }
   
-  export async function listAllAdmin() {
-    const brands = await Brand.findAll();
-    return brands;
-  }
-  
   export async function listOne(id) {
     const brand = await Brand.findByPk(id);
     if (!brand) throw new Error('brand not found');

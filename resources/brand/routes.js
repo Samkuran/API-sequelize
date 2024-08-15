@@ -47,15 +47,6 @@ router.put('/brands/:id', async (req, res) => {
     }
 });
 
-router.patch('/brands/:id', async (req, res) => {
-    try {
-        await controller.disable(req.params.id);
-        res.status(204).end();
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
-
 router.delete('/brands/:id', async (req, res) => {
     try {
         await controller.destroy(req.params.id);
